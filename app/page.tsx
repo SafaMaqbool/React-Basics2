@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import User from "@/components/User";
 
 export default function Home() {
@@ -19,6 +19,11 @@ export default function Home() {
       <User key={users[3].id} {...users[3]} />
       <User key={users[4].id} {...users[4]} />
       <User key={users[5].id} {...users[5]} />
+
+      {/* Corrected .map usage */}
+      {users.map((a,b) => (
+        <User key={b} {...a} />
+      ))}
     </main>
   );
 }
